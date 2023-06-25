@@ -1,9 +1,6 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "product attributes must not be empty" do
     product = Product.new
@@ -37,7 +34,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test "image url" do
     ok = %w{ fred.gif fred.jpg fred.png FRED.Jpg }
-    bad = %w{ fred.doc fred.gif/more fred.gif.more test.png}
+    bad = %w{ fred.doc fred.gif/more fred.gif.more test.pngg}
 
     ok.each do |image_url|
       assert new_product(image_url).valid?, "#{image_url} must be valid"

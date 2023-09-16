@@ -28,8 +28,8 @@
 
   <div data-controller="payment">
     <div class="my-5">
-      <% form.label :pay_type %>
-      <% form.select :pay_type, Order.pay_types.keys,
+      <%= form.label :pay_type %>
+      <%= form.select :pay_type, Order.pay_types.keys,
                      { prompt: 'Select a payment method' },
                      'data-payment-target' => 'selection',
                      'data-action' => 'payment#showAdditionalFields',

@@ -16,11 +16,11 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Name", with: @user.name
     fill_in "Password", with: "secret"
-    fill_in "Password confirmation", with: "secret"
+    fill_in "Confirm", with: "secret"
     click_on "Create User"
 
-    assert_text "User was successfully created"
-    click_on "Back"
+    assert_text "User dave was successfully created."
+    click_on "Show this user", match: :first
   end
 
   test "should update User" do
@@ -29,11 +29,11 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Name", with: @user.name
     fill_in "Password", with: "secret"
-    fill_in "Password confirmation", with: "secret"
+    fill_in "Confirm", with: "secret"
     click_on "Update User"
 
-    assert_text "User was successfully updated"
-    click_on "Back"
+    assert_text "User dave was successfully updated."
+    click_on "Show this user", match: :first
   end
 
   test "should destroy User" do
